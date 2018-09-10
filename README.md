@@ -1,2 +1,3 @@
 # Euler-s-totient-function_-APP
-FIrst Swift application
+My first Swift application
+This application finds the value of Euler-s-totient-function. 
