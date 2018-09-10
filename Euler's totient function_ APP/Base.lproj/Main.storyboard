@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,85 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Euler_s_totient_function__APP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Функция Эйлера" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hf-iP-hks">
+                                <rect key="frame" x="86" y="66" width="203" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="QMW-iA-IL4"/>
+                                    <constraint firstAttribute="width" constant="203" id="Wsg-iC-afZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2DQ-4p-S1y">
+                                <rect key="frame" x="61.5" y="249" width="252" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="GtI-Ql-mTw"/>
+                                    <constraint firstAttribute="width" constant="252" id="v87-9J-JGB"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="LabelAction:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Bfp-Ub-UJn"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwv-yx-QmS">
+                                <rect key="frame" x="137.5" y="409" width="100" height="38"/>
+                                <color key="backgroundColor" red="0.068177643319999995" green="0.27166341570000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="GTN-KG-bjt"/>
+                                    <constraint firstAttribute="width" constant="100" id="IUh-iX-R8W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <color key="tintColor" red="0.068177643319999995" green="0.27166341570000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Посчитать">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qeN-UV-BDd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5N-wc-KXQ">
+                                <rect key="frame" x="145" y="173" width="85" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="E8r-Aq-nPw"/>
+                                    <constraint firstAttribute="height" constant="23" id="P0Z-U0-tUd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Q5N-wc-KXQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8K6-4X-29o"/>
+                            <constraint firstItem="Uwv-yx-QmS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ANx-hK-im0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Uwv-yx-QmS" secondAttribute="bottom" constant="220" id="FAU-km-3Qp"/>
+                            <constraint firstItem="4hf-iP-hks" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="FI1-eN-5mY"/>
+                            <constraint firstItem="Uwv-yx-QmS" firstAttribute="top" secondItem="2DQ-4p-S1y" secondAttribute="bottom" constant="122" id="Jxd-td-KQz"/>
+                            <constraint firstItem="2DQ-4p-S1y" firstAttribute="top" secondItem="Q5N-wc-KXQ" secondAttribute="bottom" constant="53" id="QPS-id-pHi"/>
+                            <constraint firstItem="2DQ-4p-S1y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V3x-eq-yHd"/>
+                            <constraint firstItem="4hf-iP-hks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pu4-hv-puH"/>
+                            <constraint firstItem="Uwv-yx-QmS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tiN-No-JDj"/>
+                            <constraint firstItem="Uwv-yx-QmS" firstAttribute="top" secondItem="2DQ-4p-S1y" secondAttribute="bottom" constant="122" id="ygs-cn-jH3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonOutlet" destination="Uwv-yx-QmS" id="7Ld-iz-E9X"/>
+                        <outlet property="inputField" destination="2DQ-4p-S1y" id="Q7u-8b-NIf"/>
+                        <outlet property="resultLabel" destination="Q5N-wc-KXQ" id="YT6-TB-gKd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
